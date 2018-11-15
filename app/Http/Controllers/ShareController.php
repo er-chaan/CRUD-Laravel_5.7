@@ -103,6 +103,8 @@ class ShareController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $share = Share::find($id);
+        $share->delete();
+        return redirect('/shares')->with('success', 'Stock has been deleted Successfully');
     }
 }
