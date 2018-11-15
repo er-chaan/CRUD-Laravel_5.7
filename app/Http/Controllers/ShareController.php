@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Share;
 
 class ShareController extends Controller
 {
@@ -13,7 +14,8 @@ class ShareController extends Controller
      */
     public function index()
     {
-        //
+        $shares = Share::all();
+        return view('shares.index', compact('shares'));
     }
 
     /**
